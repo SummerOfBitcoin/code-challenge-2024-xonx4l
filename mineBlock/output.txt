@@ -1,0 +1,2 @@
+...2ed1acffe493b50db8694ebe001b6cb6d755fa7e46b6647e114a7c355bb7ba2311064
+{"version":1,"locktime":0,"vin":[{"txid":"","vout":0,"prevout":null,"scriptsig":"Coinbase","scriptsig_asm":"","witness":[""],"is_coinbase":true,"sequence":0}],"txid":"coinbase_txid"}
