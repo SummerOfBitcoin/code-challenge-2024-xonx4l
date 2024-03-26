@@ -175,11 +175,8 @@ fn transactions_hash(transactions: &[Transaction]) -> String {
 
 fn write_output(block: &Block) {
     let mut output = block.header.clone() + "\n";
-    let coinbase_tx_serialized = serde_json::to_string(&block.transactions[0]).expect("Unable to serialize coinbase transaction");
-    output += &coinbase_tx_serialized;
     output += "\n";
     for tx in &block.transactions[1..] {
-        output += &tx.txid;
         output += "\n";
     }
     fs::write("output.txt", output).expect("Unable to write file");
@@ -193,4 +190,5 @@ fn main() {
     let valid_transactions: Vec<Transaction> = transactions.into_iter().filter(|tx| validate_transaction(tx, &mut spent_outputs)).collect();
     let block = mine_block(all_transactions);
     write_output(&block);
+
 }
